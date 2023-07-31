@@ -94,11 +94,7 @@ Remember that this is just a general guide, and depending on your specific use c
 
 ## Usage
 
-To get started with the ANPR system, please refer to the [Usage Guide](link/to/usage/guide).
-
-## Screenshots
-
-![ANPR in Action](images)
+To get started with the ANPR system, please refer to the given python codes.
 
 ## Contact
 
