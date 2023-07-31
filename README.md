@@ -69,7 +69,9 @@ Step 5: Integrating Tesseract for Text Extraction
 Install Tesseract OCR:
 
 For Ubuntu: sudo apt-get install tesseract-ocr
+
 For macOS: brew install tesseract
+
 Install the Tesseract Python wrapper (tesserocr): pip install tesserocr
 
 Step 6: Using YOLOv8 with Tesseract for Text Extraction
