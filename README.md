@@ -68,11 +68,11 @@ Step 5: Integrating Tesseract for Text Extraction
 
 Install Tesseract OCR:
 
-For Ubuntu: sudo apt-get install tesseract-ocr
+-->For Ubuntu: sudo apt-get install tesseract-ocr
 
-For macOS: brew install tesseract
+-->For macOS: brew install tesseract
 
-Install the Tesseract Python wrapper (tesserocr): pip install tesserocr
+-->Install the Tesseract Python wrapper (tesserocr): pip install tesserocr
 
 Step 6: Using YOLOv8 with Tesseract for Text Extraction
 
@@ -83,9 +83,11 @@ import tesserocr
 from PIL import Image
 
 #Load the cropped license plate region
+
 plate_image = Image.open("path/to/cropped_plate_image.jpg")
 
 #Perform text extraction using Tesseract
+
 extracted_text = tesserocr.image_to_text(plate_image)
 
 print(extracted_text)
