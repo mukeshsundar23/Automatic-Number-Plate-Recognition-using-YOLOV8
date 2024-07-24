@@ -19,22 +19,19 @@ Whether you're building a traffic monitoring system, a parking management applic
 
 ## Installation
 
-Instructions on how to install and set up the ANPR system can be found in the [Installation Guide](link/to/installation/guide).Installing YOLOv8 and setting up Tesseract for text extraction can involve multiple steps. Below is a step-by-step installation guide for YOLOv8 using a custom dataset and integrating Tesseract for text extraction.
+Installing YOLOv8 and setting up Tesseract for text extraction can involve multiple steps. Below is a step-by-step installation guide for YOLOv8 using a custom dataset and integrating Tesseract for text extraction.
 
-Step 1: Clone the YOLOv8 Repository
+Step 1: Install the Ultralytics package 
 
-1. Open a terminal or command prompt.
-2. Navigate to the directory where you want to install YOLOv8.
-3. Clone the YOLOv8 repository from GitHub: git clone https://github.com/AlexeyAB/darknet.git
+> pip install ultralytics
 
 Step 2: Configure YOLOv8 for Custom Dataset
 
-1. Go into the darknet directory: cd darknet
-2. Make sure you have CUDA and cuDNN installed if you want to use GPU acceleration for training and inference. If you don't have a GPU, you can still use YOLOv8, but it will be slower.
-3. Modify the Makefile to enable GPU and other configurations. Open the Makefile using a text editor.
-4. Change the GPU, CUDNN, and OPENCV flags to 1 to enable GPU, cuDNN, and OpenCV support, respectively.
-5. Adjust other settings in the Makefile according to your system (e.g., set ARCH based on your GPU architecture).
-6. Compile YOLOv8: make
+1. Make sure you have CUDA and cuDNN installed if you want to use GPU acceleration for training and inference. If you don't have a GPU, you can still use YOLOv8, but it will be slower.
+2. Modify the Makefile to enable GPU and other configurations. Open the Makefile using a text editor.
+3. Change the GPU, CUDNN, and OPENCV flags to 1 to enable GPU, cuDNN, and OpenCV support, respectively.
+4. Adjust other settings in the Makefile according to your system (e.g., set ARCH based on your GPU architecture).
+5. Compile YOLOv8: make
 
 Step 3: Prepare Your Custom Dataset
 
@@ -61,8 +58,8 @@ Replace {number of classes} with the actual number of classes in your dataset.
 
 Step 4: Train YOLOv8 on Your Custom Dataset
 
-1. Download pre-trained weights (e.g., yolov4.conv.137) from the YOLO website or use the darknet53.conv.74 provided with the YOLOv8 repository.
-2. Start training: ./darknet detector train /path/to/your.data /path/to/yolov4.cfg /path/to/pre-trained-weights -map
+1. Download pre-trained weights from the YOLO repository.
+2. Start training.
 
 Step 5: Integrating Tesseract for Text Extraction
 
@@ -78,19 +75,7 @@ Step 6: Using YOLOv8 with Tesseract for Text Extraction
 
 1. After YOLOv8 detects license plates in an image, crop the license plate region.
 2. Save the cropped license plate region as an image file.
-3. Use Tesseract to perform text extraction on the saved image file:
-import tesserocr
-from PIL import Image
-
-#Load the cropped license plate region
-
-plate_image = Image.open("path/to/cropped_plate_image.jpg")
-
-#Perform text extraction using Tesseract
-
-extracted_text = tesserocr.image_to_text(plate_image)
-
-print(extracted_text)
+3. Use Tesseract to perform text extraction on the saved image file.
 
 Remember that this is just a general guide, and depending on your specific use case and environment, some details might differ. Always refer to the official documentation of YOLOv8 and Tesseract for more information and troubleshooting.
 
