@@ -23,7 +23,9 @@ Installing YOLOv8 and setting up Tesseract for text extraction can involve multi
 
 Step 1: Install the Ultralytics package 
 
-> pip install ultralytics
+```bash
+pip install ultralytics
+```
 
 Step 2: Configure YOLOv8 for Custom Dataset
 
